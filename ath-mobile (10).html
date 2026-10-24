@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shivansh — cinema, ventures, research, autonomy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBFBFA;--ink:#14161B;--mute:#4E535B;--line:#DCDDE0;--accent:#17402F;color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101113;--ink:#F0F0EE;--mute:#B2B6BD;--line:#2A2C31;--accent:#9FD4B8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101113;--ink:#F0F0EE;--mute:#B2B6BD;--line:#2A2C31;--accent:#9FD4B8;color-scheme:dark}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.75 "Hanken Grotesk",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.wrap{max-width:80rem;margin:0 auto;padding:0 clamp(1.25rem,6vw,5rem)}
+.serif{font-family:"Bodoni Moda",Georgia,serif;font-weight:400}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;flex-wrap:wrap;gap:.5rem 1.5rem}
+.top a{text-decoration:none;color:var(--mute)}
+.top a:hover,.top a.home{color:var(--ink)}
+.top nav a{margin-left:1.5rem}
+.hero{padding:clamp(3rem,10vw,7rem) 0 clamp(4rem,9vw,7rem)}
+.hero-h{margin:0;font-weight:400}
+.mark{display:block;margin:0 0 0 -.05em;font-size:clamp(8rem,30vw,24rem);line-height:.82;letter-spacing:-.04em}
+.roles{margin:2.5rem 0 1rem;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.5;max-width:36rem}
+.hero p.sub{margin:0;color:var(--mute);max-width:34rem}
+section.s{padding:clamp(3.5rem,8vw,6.5rem) 0;border-top:1px solid var(--line)}
+.label{margin:0 0 2.5rem;color:var(--mute);font-weight:500}
+.big{margin:0;font-size:clamp(1.9rem,4.8vw,3.4rem);line-height:1.18;letter-spacing:-.02em;max-width:44rem}
+.body{max-width:40rem;margin:1.75rem 0 0}
+.body p{margin:0 0 1.1rem}
+.work{display:grid;gap:2.5rem}
+.list{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;align-self:start}
+.list button{all:unset;cursor:pointer;font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(1.6rem,4.4vw,3rem);line-height:1.2;letter-spacing:-.02em;color:var(--mute);transition:color .25s}
+@media(hover:hover){.list button:hover{color:var(--ink)}}
+.list button[aria-pressed="true"]{color:var(--ink);font-style:italic}
+.list button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.detail{animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.lead{margin:0 0 1.25rem;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.2;letter-spacing:-.01em;max-width:32rem}
+.thought{margin:0 0 1.75rem;max-width:34rem}
+.poem{margin:0 0 2.25rem;padding:.25rem 0 .25rem 1.25rem;border-left:2px solid var(--accent);font:italic 400 clamp(1.15rem,2vw,1.4rem)/1.65 "Bodoni Moda",Georgia,serif;white-space:pre-line}
+.sm{margin:0 0 .5rem;color:var(--mute);font-weight:500;font-size:1rem}
+.proj{padding:1.1rem 0;border-top:1px solid var(--line)}
+.proj h3{margin:0;font:600 1.15rem/1.4 "Hanken Grotesk",sans-serif;display:flex;justify-content:space-between;gap:1rem}
+.proj h3 span{font-weight:400;color:var(--mute)}
+.proj h3 a.plink{text-decoration:none;border-bottom:1px solid var(--accent);align-self:flex-start;min-height:44px;display:inline-flex;align-items:center}
+.proj h3 a.plink:hover{color:var(--accent)}
+.proj p{margin:.25rem 0 0;color:var(--mute);max-width:34rem}
+.tools{margin:1.25rem 0 0;color:var(--mute)}
+.soon{margin:0;padding:1.1rem 0;border-top:1px solid var(--line);color:var(--mute)}
+.pr{display:grid;gap:2rem 4rem;margin:0;padding:0;list-style:none}
+.pr b{display:block;font:400 clamp(1.4rem,2.4vw,1.7rem)/1.25 "Bodoni Moda",Georgia,serif;margin-bottom:.35rem}
+.pr span{color:var(--mute);display:block;max-width:26rem}
+.long{margin:0;max-width:34rem;font:400 clamp(1.25rem,2.2vw,1.6rem)/1.8 "Bodoni Moda",Georgia,serif;white-space:pre-line}
+.long+.long{margin-top:1.5rem}
+.close{margin:2.5rem 0 0;color:var(--mute);max-width:34rem}
+.close.sh{font-style:italic;font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.9;color:var(--ink)}
+.about{display:grid;gap:2.5rem}
+.open{margin:0;padding:0;list-style:none}
+.open li{padding:.7rem 0;border-top:1px solid var(--line)}
+.mail{display:inline-block;font-size:clamp(1.6rem,6.2vw,4.5rem);line-height:1.1;letter-spacing:-.03em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em;text-decoration-color:var(--accent);overflow-wrap:anywhere}
+.mail:hover{color:var(--accent)}
+.note{margin:1.5rem 0 0;color:var(--mute);max-width:32rem}
+.links{display:flex;flex-wrap:wrap;gap:.5rem 2rem;margin:2rem 0 0;padding:0;list-style:none}
+.links a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.1rem}
+.links a:hover{color:var(--ink);border-color:var(--accent)}
+footer{padding:2rem 0 3rem;color:var(--mute);border-top:1px solid var(--line)}
+@media(min-width:56rem){.work{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:5rem}.list{flex-direction:column;position:sticky;top:2rem;gap:.25rem}.pr{grid-template-columns:1fr 1fr}.about{grid-template-columns:1.4fr 1fr;gap:5rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* ---- Mobile ---- */
+.top a,.links a{min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:55.99rem){
+  .work{grid-template-columns:6.9rem minmax(0,1fr);gap:1.25rem;align-items:start}
+  .list{position:sticky;top:1.25rem;flex-direction:column;flex-wrap:nowrap;overflow:visible;gap:.15rem;margin:0;padding:0;background:none;border:0;align-self:start}
+  .list button{flex:none;display:block;min-height:44px;padding:.5rem 0 .5rem .7rem;font-size:1.05rem;line-height:1.3;letter-spacing:-.01em;border:0;border-left:2px solid var(--line);border-radius:0;background:none;overflow-wrap:anywhere;transition:color .25s,border-color .25s}
+  .list button[aria-pressed="true"]{border-left-color:var(--accent);background:none}
+  .lead{font-size:1.4rem}
+  .thought,.proj p{max-width:none}
+}
+@media(max-width:40rem){
+  body{font-size:1.0625rem;line-height:1.7}
+  .top{padding:1rem 0;gap:.25rem 1rem}
+  .top nav{display:flex;flex-wrap:wrap;gap:0 1.1rem}
+  .top nav a{margin-left:0;font-size:1rem}
+  .hero{padding:2rem 0 3rem}
+  .mark{font-size:clamp(7rem,38vw,10rem)}
+  .hero-name{margin-top:1.1rem}
+  .roles{margin-top:1.75rem}
+  section.s{padding:3rem 0}
+  .label{margin-bottom:1.5rem}
+  .body{margin-top:1.25rem}
+  .proj h3{flex-direction:column;gap:.1rem}
+  .poem{padding-left:.8rem;font-size:1.05rem}
+  .pr{gap:1.5rem}
+  .pr span{max-width:none}
+  .long{line-height:1.7}
+  .links{gap:0 1.5rem}
+  .mail{font-size:clamp(1.3rem,6.4vw,2rem)}
+  footer{padding:1.5rem 0 2rem}
+}
+
+/* ---- Hero refresh ---- */
+.roles{font-size:clamp(1.35rem,3vw,2rem);line-height:1.45;max-width:44rem;letter-spacing:-.01em}
+.roles span{white-space:nowrap}
+.roles span:not(:last-child)::after{content:"";display:inline-block;width:.3em;height:.3em;border-radius:50%;background:var(--accent);margin:0 .7em;vertical-align:middle;position:relative;top:-.05em}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem 1rem;margin-top:2.25rem}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 1.6rem;border:1px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:500;transition:background .25s,color .25s,border-color .25s}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+@media(hover:hover){.btn:hover{border-color:var(--accent);color:var(--accent)}.btn.primary:hover{background:transparent;color:var(--accent)}}
+@media(max-width:40rem){.roles{font-size:1.3rem}.cta{margin-top:1.75rem}.btn{flex:1 1 auto;justify-content:center}}
+.hero p.sub{margin-top:2.5rem;font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.6;max-width:36rem}
+@media(max-width:40rem){.hero p.sub{margin-top:1.75rem}}
+
+/* ---- Menu ---- */
+.menu-btn{all:unset;cursor:pointer;box-sizing:border-box;min-height:44px;display:inline-flex;align-items:center;font-family:"Bodoni Moda",Georgia,serif;font-size:1.35rem;letter-spacing:-.01em;color:var(--ink);background:linear-gradient(var(--accent),var(--accent)) 0 calc(100% - .55rem)/0 2px no-repeat;transition:background-size .3s}
+.menu-btn:hover,.menu-btn:focus-visible,.menu-btn[aria-expanded="true"]{background-size:100% 2px}
+.menu-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.menu{position:fixed;inset:0;z-index:50;background:var(--bg);color:var(--ink);overflow-y:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);animation:in .3s ease}
+.menu[hidden]{display:none}
+.menu-top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0}
+.menu-mark{font-size:1.35rem}
+.menu>.wrap{min-height:100%;display:flex;flex-direction:column}
+.menu-nav{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.4rem;padding:1.5rem 0 4rem}
+.menu-nav a{text-decoration:none;font-size:clamp(2.8rem,10vw,6.5rem);line-height:1.1;letter-spacing:-.03em;padding:.15em 0;color:var(--ink);background:linear-gradient(var(--accent),var(--accent)) 0 calc(100% - .1em)/0 3px no-repeat;transition:background-size .4s ease,color .25s}
+.menu-nav a:hover,.menu-nav a:focus-visible,.menu-nav a.on{background-size:100% 3px;color:var(--accent)}
+body.menu-open{overflow:hidden}
+@media(max-width:40rem){.menu-top{padding:1rem 0}}
+
+/* ---- Subscribe form ---- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.sub-form{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;max-width:36rem}
+.sub-form input[type=email]{flex:1 1 15rem;min-width:0;min-height:48px;padding:0 1.35rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-size:1.0625rem}
+.sub-form input[type=email]::placeholder{color:var(--mute)}
+.sub-form input[type=email]:focus{border-color:var(--accent)}
+.sub-form button.btn{font:inherit;font-weight:500;cursor:pointer;background:var(--accent);color:var(--bg)}
+.sub-form button.btn:disabled{opacity:.6;cursor:default}
+.sub-msg{margin:1rem 0 0;min-height:1.7em;color:var(--mute)}
+.sub-msg.ok{color:var(--accent)}
+.hero-name{display:block;margin-top:1.75rem;font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.2;letter-spacing:.01em;font-style:italic;color:var(--ink)}
+.hero-name::before{content:"";display:inline-block;width:2.2rem;height:2px;background:var(--accent);vertical-align:middle;margin-right:.9rem;position:relative;top:-.08em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="home" href="#top">Shivansh</a><button type="button" class="menu-btn serif" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button></header>
+  <main id="top">
+    <div class="hero">
+      <h1 class="hero-h serif" aria-label="Shivansh"><span class="mark" aria-hidden="true">ath</span><span class="hero-name">Shivansh</span></h1>
+      <p class="sub">Ways of paying attention, joined by one method: look closely, test honestly, finish what you start.</p>
+      <div class="cta"><a class="btn primary" href="#work">See the work</a><a class="btn" href="#contact">Get in touch</a></div>
+    </div>
+
+    <section class="s" id="why">
+      <p class="label">Why many fields</p>
+      <p class="big serif">One lens shows one side of the world. Multiple lenses show how it fits together.</p>
+      <div class="body">
+        <p>I don’t see film, business, science, data, photography and robotics as separate careers. They are six ways of paying attention to the same world.</p>
+        <p>The camera teaches patience. The experiment teaches humility. The balance sheet teaches honesty. The dataset teaches doubt. The photograph teaches stillness. The robot teaches that an idea must survive contact with reality.</p>
+        <p>Each field corrects the blind spots of the others. That is the whole point of working across them.</p>
+      </div>
+    </section>
+
+    <section class="s" id="work">
+      <p class="label">Work, field by field</p>
+      <div class="work">
+        <div class="list" id="list"></div>
+        <div class="detail" id="detail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="s" id="philosophy">
+      <p class="label">Philosophy</p>
+      <p class="big serif">Curiosity is where it starts. Kindness is what makes it worth doing.</p>
+      <ul class="pr" style="margin-top:3rem">
+        <li><b>Be curious before you are clever.</b><span>Questions open doors that answers only close.</span></li>
+        <li><b>Make it simple, then make it true.</b><span>Clarity is a form of respect for the person reading or watching.</span></li>
+        <li><b>Finish what you start.</b><span>Unfinished work teaches very little. Shipped work teaches everything.</span></li>
+        <li><b>Share what you learn.</b><span>Knowledge grows when it is given away, not kept.</span></li>
+        <li><b>Be wrong early and often.</b><span>The fastest way to a right answer runs through many small failures.</span></li>
+        <li><b>Stay kind.</b><span>Skill without warmth is only noise.</span></li>
+      </ul>
+    </section>
+
+    <section class="s" id="poem">
+      <p class="label">A poem</p>
+      <p class="big serif" style="margin-bottom:2.5rem">Many Doors</p>
+      <p class="long">They asked me which door I would choose.
+I said: the house has many rooms.</p>
+      <p class="long">In one, a camera learns patience.
+In one, a ledger learns the truth.
+In one, an equation is allowed to fail.
+In one, a number becomes a story.
+In one, the light arrives and stays.
+In one, a machine takes its first step.</p>
+      <p class="long">I am not lost between them.
+I am the hallway that joins them,
+carrying the lamp from room to room.</p>
+      <p class="close sh serif">Kabhi aur sahi, kahin aur sahi!<br>Har dar pe dastak di, har raah ko apna kaha.<br>Raaste kai the, nazariya ek hi raha —<br>Dekhne ka yeh andaaz, mera har jagah sahi rha!</p>
+    </section>
+
+    <section class="s" id="about">
+      <p class="label">About</p>
+      <div class="about">
+        <div>
+          <p class="big serif">An interdisciplinary maker, working where art, science and enterprise overlap.</p>
+          <div class="body">
+            <p>Shivansh works across filmmaking, entrepreneurship, scientific research, data analysis, photography and AI and robotics engineering. The work is united by one habit: pay close attention, test ideas against reality, and share the result clearly.</p>
+            <p>Whether the project is a film, a forecast, an experiment or a machine, the aim is the same: make something honest that other people can understand and use.</p>
+          </div>
+        </div>
+        <div>
+          <p class="sm">Open to</p>
+          <ul class="open"><li>Film and photography commissions</li><li>Research collaborations</li><li>Data, AI and robotics projects</li><li>Ventures and consulting</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="s" id="follow">
+      <p class="label">Follow</p>
+      <p class="big serif">Letters from the hallway.</p>
+      <div class="body">
+        <p>Essays, experiments and notes from behind the lens, the lab and the workbench. Leave your email, any email, and I will write when there is something worth saying.</p>
+      </div>
+      <form class="sub-form" id="subForm" novalidate>
+        <label class="sr" for="subEmail">Email address</label>
+        <input id="subEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@gmail.com" required>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn primary" type="submit">Subscribe</button>
+      </form>
+      <p class="sub-msg" id="subMsg" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="s" id="contact">
+      <p class="label">Contact</p>
+      <a class="mail serif" id="mailLink" href="#contact">Write to me</a>
+      <p class="note">Write with a project, a question or just a thought. For longer ideas and essays, read my Substack.</p>
+      <ul class="links" aria-label="Elsewhere online">
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://pin.it/7F8dOnGQj" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://open.spotify.com/user/31nq3cql4zzwhpe2t774uq5d2fd4" target="_blank" rel="noopener">Spotify</a></li>
+        <li><a href="https://substack.com/@meathrvv" target="_blank" rel="noopener">Substack</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>© 2026 Shivansh</footer>
+</div>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="wrap">
+    <div class="menu-top"><span class="serif menu-mark">Shivansh</span><button type="button" class="menu-btn serif" id="menuClose">Close</button></div>
+    <nav class="menu-nav" aria-label="Main">
+      <a class="serif" href="#work">Work</a>
+      <a class="serif" href="#philosophy">Philosophy</a>
+      <a class="serif" href="#about">About</a>
+      <a class="serif" href="#follow">Follow</a>
+      <a class="serif" href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+<script>
+(function(){
+  // Project entries are placeholders: replace with real work.
+  var D=[
+    ['Cinema','Stories told in motion.','A film is a promise to the viewer: stay a little longer and you will see something true.','Twenty-four frames each second,\nand one of them is the truth.\nI wait behind the lens\nuntil the world forgets I’m there.',[['Still Water','2026','Upcoming. We are working on it.'],['Why Live','2026','Upcoming. We are working on it.']],'Directing, cinematography, editing, colour grading','More will be added soon.'],
+    ['Ventures','Ventures that work on paper and in practice.','A business is a story that has to pay its bills. Both halves have to be true.','Build slowly, speak plainly,\nkeep your word when it costs.\nThe market is only people,\nand people remember.',[],'Strategy, operations, fundraising, markets'],
+    ['Research','Sharp questions, careful tests.','Being wrong is not failure. Being unwilling to find out is.','I begin with a question\nand end with a better one.\nBetween them lies a small, stubborn\npatch of what is known.',[['ML & Physics Research','2026','A survey of machine learning applied to physics, with the full write-up as a PDF.','https://github.com/meshivanshh/ml-physics-research']],'Experiment design, statistics, scientific writing','That\u2019s all for now. More research will be added as it\u2019s ready.'],
+    ['Data','Messy data into clear answers.','Data is memory. Analysis is the decision to learn from it.','Rows and columns, quiet and patient,\nhold what we were too busy to notice.\nI listen until the noise\nturns into a sentence.',[],'Python, SQL, dashboards, forecasting'],
+    ['Stills','Light, framing and patience.','Light is the only subject. Everything else is what it falls on.','I do not take a photograph.\nI wait, and one is given:\na held breath,\na door of light left open.',[],'Street, landscape, portrait, Lightroom'],
+    ['Autonomy','Machines that see, learn and move.','A good idea is only a guess until it moves.','Teach the machine to see,\nand it will teach you what seeing is.\nEvery fall in the lab\nis a lesson in how to stand.',[],'PyTorch, ROS, computer vision, embedded systems'],
+    ['Explorations','Work that sits between the fields.','Placeholder: a line about the projects that do not fit one label.','Placeholder poem line one,\nplaceholder poem line two,\nplaceholder poem line three.',[],'']
+  ];
+  var list=document.getElementById('list'),detail=document.getElementById('detail'),btns=[];
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function show(i){
+    btns.forEach(function(b,j){b.setAttribute('aria-pressed',String(i===j))});
+    var d=D[i],n=detail.cloneNode(false);
+    n.appendChild(el('p','lead serif',d[1]));
+    n.appendChild(el('p','thought',d[2]));
+    n.appendChild(el('p','poem',d[3]));
+    n.appendChild(el('p','sm','Selected projects'));
+    if(!d[4].length){n.appendChild(el('p','soon','Soon. More work will be added here.'))}
+    d[4].forEach(function(p){var w=el('div','proj'),h=el('h3',0,p[3]?null:p[0]);
+      if(p[3]){var a=el('a','plink',p[0]+' \u2197');a.href=p[3];a.target='_blank';a.rel='noopener';h.appendChild(a)}
+      h.appendChild(el('span',0,p[1]));w.appendChild(h);w.appendChild(el('p',0,p[2]));n.appendChild(w)});
+    if(d[4].length&&d[6])n.appendChild(el('p','soon',d[6]));
+    if(d[5])n.appendChild(el('p','tools','Tools and skills: '+d[5]));
+    detail.parentNode.replaceChild(n,detail);detail=n;
+    if(btns[i].scrollIntoView&&list.scrollWidth>list.clientWidth)btns[i].scrollIntoView({inline:'center',block:'nearest'});
+  }
+  D.forEach(function(d,i){
+    var b=el('button',0,d[0]);b.type='button';b.setAttribute('aria-pressed','false');
+    b.onclick=function(){show(i)};
+    list.appendChild(b);btns.push(b);
+  });
+  show(0);
+})();
+
+(function(){
+  var btn=document.getElementById('menuBtn'),menu=document.getElementById('menu'),closeB=document.getElementById('menuClose');
+  var links=[].slice.call(menu.querySelectorAll('.menu-nav a'));
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function open(){menu.hidden=false;document.body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');links.forEach(function(a){a.classList.remove('on')});closeB.focus()}
+  function close(back){menu.hidden=true;document.body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');if(back!==false)btn.focus()}
+  btn.onclick=open;closeB.onclick=function(){close()};
+  links.forEach(function(a){a.addEventListener('click',function(e){
+    e.preventDefault();links.forEach(function(x){x.classList.remove('on')});a.classList.add('on');
+    var t=document.querySelector(a.getAttribute('href'));
+    setTimeout(function(){close(false);if(t){t.scrollIntoView();history.replaceState(null,'',a.getAttribute('href'))}},reduce?0:450);
+  })});
+  document.addEventListener('keydown',function(e){
+    if(menu.hidden)return;
+    if(e.key==='Escape'){close();return}
+    if(e.key==='Tab'){var f=[closeB].concat(links),i=f.indexOf(document.activeElement);
+      if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}
+      else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}
+  });
+})();
+
+(function(){
+  // Paste your Google Apps Script web-app URL here to collect emails. Empty = opens the visitor's email app instead.
+  var ENDPOINT='';
+  var f=document.getElementById('subForm'),i=document.getElementById('subEmail'),m=document.getElementById('subMsg'),b=f.querySelector('button');
+  function say(t,ok){m.textContent=t;m.className='sub-msg'+(ok?' ok':'')}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=i.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){say('Please enter a valid email address.');i.focus();return}
+    if(f.company.value){say('Thank you. You are on the list.',true);return}
+    if(!ENDPOINT){
+      location.href='mailto:'+['meathrvvv','gmail.com'].join('@')+'?subject='+encodeURIComponent('Subscribe me to the letters')+'&body='+encodeURIComponent('Hi, please add this email to your letters: '+v);
+      say('Opening your email app. Just press send.',true);return;
+    }
+    b.disabled=true;say('Subscribing…');
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams({email:v,page:location.href})})
+      .then(function(){say('Thank you. You are on the list. A note from me is on its way to your inbox.',true);f.reset()})
+      .catch(function(){say('Something went wrong. Please try again, or write to me directly.')})
+      .then(function(){b.disabled=false});
+  });
+})();
+
+(function(){
+  var a=document.getElementById('mailLink');
+  a.addEventListener('click',function(e){e.preventDefault();location.href='mailto:'+['meathrvvv','gmail.com'].join('@')});
+})();
+</script>
+</body>
+</html>
